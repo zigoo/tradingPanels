@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Panel from "./Panel";
+import Panels from "./Components/Panels";
+import "./Styles/styles.css";
 
 ReactDOM.render(
-	<Panel />,
+	<Panels />,
 	document.getElementById("root")
 );
