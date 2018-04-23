@@ -20,18 +20,18 @@ const ArrowSvg = ({ children, right }) => {
 
 const InsideText = props => {
 	const { children, right, top, buy, sell } = props;
-	let x = typeof children === Array ? children.map(e => e) : children;
+	let child = typeof children === Array ? children.map(e => e) : children;
 
 	const SText = props => {
 		const { y, fsize, offset, fbold, ...rest } = props;
-		let x = parseInt(offset) + 45;
+		let offSetValue = parseInt(offset) + 45;
 
 		return (
 			<text
 				{...rest}
 				x={
 					right && top ? "60px" :
-					right && buy ? `${x}px` : 
+					right && buy ? `${offSetValue}px` : 
 					`${offset}px`
 				}
 				y={y}
@@ -59,25 +59,25 @@ const InsideText = props => {
 					y="30"
 					offset="2"
 					fsize="12px">
-						{x.substring(0, 4)}
+						{child.substring(0, 4)}
 				</SText>
 				<SText
 					y="30"
 					offset="25"
 					fsize="16px"
 					fbold>
-						{x.substring(4, 6)}
+						{child.substring(4, 6)}
 				</SText>
 				<SText
 					y="25"
 					offset="45">
-						{x.substring(6, 7)}
+						{child.substring(6, 7)}
 				</SText>
 			</React.Fragment>
 		);
 	};
 
-	return wrappedText(x);
+	return wrappedText(child);
 };
 
 export { ArrowSvg, InsideText };
