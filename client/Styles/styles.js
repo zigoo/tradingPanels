@@ -1,8 +1,8 @@
 const styles = {
 	wrapper: {
 			display: "inline-block",
-		width: "200px",
-		height: "80px",
+		width: "260px",
+		height: "100px",
 		backgroundColor: "#e8e5e5",
 		border: "1px #ccc solid"
 	},
@@ -18,22 +18,20 @@ const styles = {
 		flexWrap: "nowrap",
 		padding: 5
 	},
-	sellPanel: {
-		flex: "50%",
-		fontSize: "10px",
-		height: "35px",
-		color: "red",
-		border: "1px red solid",
-		marginRight: "5px"
-	},
-	buyPanel: {
+	panel: {
 		flex: "50%",
 		fontSize: "10px",
 		height: "35px",
 		color: "green",
-		border: "1px red solid",
-		textAlign: "right"
-	}
+		margin: "0 0 0 5px",
+		position: "relative"
+	},
+	buyPanel: {
+		margin: "0 5px 0 0",
+		textAlign: "right",
+		color: "red",
+		position: "relative"
+	},
 };
 
 export default styles;
