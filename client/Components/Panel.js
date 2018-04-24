@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import styles from "../Styles/styles";
-import { ArrowSvg, InsideText } from "../Helpers/helpers";
+import { ArrowSvg, InsideText } from "../Helpers/";
 
 class Panel extends PureComponent {
 	render() {
@@ -11,6 +11,7 @@ class Panel extends PureComponent {
 		const sellStringValue = sell.toString().padEnd(7, 0);
 		const buyCurr = currencyPair.substring(0, 3);
 		const sellCurr = currencyPair.substring(4, 7);
+		const buyOverSell = buy > sell;
 
 		const CurrencyHeader = props => (
 			<div {...props} style={styles.pairHeader}>
@@ -18,14 +19,14 @@ class Panel extends PureComponent {
 			</div>
 		);
 
-		const buyOverSell = buy > sell;
+
 		return (
 			<div style={styles.wrapper}>
-				<div style={{ border: "1px #ccc solid", height: "100%" }}>
+				<div style={styles.innerBorder}>
 					<CurrencyHeader />
 					<div style={styles.content}>
 						<div style={styles.panel}>
-							<ArrowSvg>
+							<ArrowSvg sell>
 								<InsideText sell top>
 									Sell {sellCurr}
 								</InsideText>
@@ -40,7 +41,7 @@ class Panel extends PureComponent {
 							}}
 						/>
 						<div style={{ ...styles.panel, ...styles.buyPanel }}>
-							<ArrowSvg right>
+							<ArrowSvg buy right>
 								<InsideText top right>
 									Buy {buyCurr}
 								</InsideText>
