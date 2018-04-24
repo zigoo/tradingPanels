@@ -24,7 +24,7 @@ class ArrowSvg extends PureComponent {
 
 	resetToDefaults = () =>
 		this.setState({
-			stroke: "$ccc",
+			stroke: "#ccc",
 			fill: "white"
 		});
 
