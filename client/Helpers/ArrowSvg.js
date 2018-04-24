@@ -60,3 +60,4 @@ ArrowSvg.propTypes = {
 };
 
 export default ArrowSvg;
+ 
