@@ -14,8 +14,9 @@ class Panels extends Component {
 	render() {
 		return (
 			<div>
-				{currenciesPairs.map(currPair => (
+				{currenciesPairs.map((currPair, index) => (
 					<Panel
+						key={index}
 						currencyPair={currPair.pair}
 						buy={currPair.buy}
 						sell={currPair.sell}
