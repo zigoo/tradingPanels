@@ -2,15 +2,18 @@ import React from "react";
 
 const ArrowSvg = ({ children, right }) => {
 	return (
-		<svg width="100px" height="36px">
+		<svg
+			width="116px"
+			height="45px"
+			style={{padding: "2 2"}}>
 			<path
 				width="1px"
 				fill="white"
-				stroke="gray"
+				stroke="#ccc"
 				d={
 					right
-						? "M100 0 L76 0  24 0 L 10 14 C 10 14 8 21 11 26 L 24 36 L 100 36 Z"
-						: "M0 0 L76 0 L90 14 C90 14 92 21 89 26 L76 36 L0 36 Z"
+						? "M116 0 L22 0 L2 18 C2 18 0 25 3 30 L22 44 L116 44 Z"
+						: "M0 0 L95 0 L115 18 C115 18 117 25 114 30 L95 44 L0 44 Z"
 				}/>
 			{children}
 		</svg>
@@ -22,23 +25,24 @@ const InsideText = props => {
 
 	const SText = props => {
 		const { y, fsize, offset, fbold, ...rest } = props;
-		let offSetValue = parseInt(offset) + 45;
+		let offSetValue = parseInt(offset) + 33;
 
 		return (
 			<text
 				{...rest}
 				x={
 					right && top
-						? "60px"
+						? "78px"
 						: right && buy
 							? `${offSetValue}px`
 							: `${offset}px`
 				}
 				y={y}
-				fill={sell ? "red" : "green"}
+				fill={sell ? "crimson" : "green"}
 				style={{
 					fontSize: fsize,
-					fontWeight: fbold ? "bold" : null
+					fontWeight: fbold ? "bold" : null,
+					textShadow: "rgba(0,0,0,.01) 0 0 1px"
 				}}
 			/>
 		);
@@ -47,7 +51,7 @@ const InsideText = props => {
 	const styledText = string => {
 		if (top) {
 			return (
-				<SText y="10" offset="2">
+				<SText y="12" offset="4" fsize="9px" fbold>
 					{string}
 				</SText>
 			);
@@ -55,13 +59,13 @@ const InsideText = props => {
 
 		return (
 			<React.Fragment>
-				<SText y="30" offset="2" fsize="12px">
+				<SText y="38" offset="4" fsize="18px">
 					{string.substring(0, 4)}
 				</SText>
-				<SText y="30" offset="25" fsize="16px" fbold>
+				<SText y="38" offset="39" fsize="26px" fbold>
 					{string.substring(4, 6)}
 				</SText>
-				<SText y="25" offset="45">
+				<SText y="27" offset="70" fsize="16px">
 					{string.substring(6, 7)}
 				</SText>
 			</React.Fragment>

@@ -20,6 +20,7 @@ class Panel extends PureComponent {
 		
 		return (
 			<div style={styles.wrapper}>
+			<div style={{border: "1px #ccc solid", height: "100%"}}>
 				<CurrencyHeader/>
 				<div style={styles.content}>
 					<div style={styles.panel}>
@@ -42,6 +43,7 @@ class Panel extends PureComponent {
 							</InsideText>
 						</ArrowSvg>
 					</div>
+				</div>
 				</div>
 			</div>
 		);

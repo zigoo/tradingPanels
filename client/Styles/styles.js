@@ -1,36 +1,31 @@
 const styles = {
 	wrapper: {
-			display: "inline-block",
-		width: "260px",
+		display: "inline-block",
+		width: "265px",
 		height: "100px",
-		backgroundColor: "#e8e5e5",
-		border: "1px #ccc solid"
+		backgroundColor: "#F0F0F1",
+		border: "1px #ccc solid",
+		padding: 4
 	},
 	pairHeader: {
 		height: "20px",
+		lineHeight: "20px",
 		textAlign: "center",
-		fontSize: "16px",
+		fontSize: "14px",
+		fontWeight: "bold",
 		color: "white",
-		backgroundColor: "#777"
+		backgroundColor: "#5C5C5D"
 	},
 	content: {
 		display: "flex",
 		flexWrap: "nowrap",
-		padding: 5
+		padding: "4px 8px"
 	},
 	panel: {
 		flex: "50%",
-		fontSize: "10px",
-		height: "35px",
-		color: "green",
-		margin: "0 0 0 5px",
-		position: "relative"
 	},
 	buyPanel: {
-		margin: "0 5px 0 0",
 		textAlign: "right",
-		color: "red",
-		position: "relative"
 	},
 };
 
