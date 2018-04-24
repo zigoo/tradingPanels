@@ -22,11 +22,18 @@ const styles = {
 		padding: "4px 8px"
 	},
 	panel: {
-		flex: "50%",
+		flex: "50%"
 	},
 	buyPanel: {
-		textAlign: "right",
+		textAlign: "right"
 	},
+	triangle: {
+		width: 0,
+		height: 0,
+		borderStyle: "solid",
+		borderWidth: "0 5px 17px 5px",
+		borderColor: "transparent transparent #007bff transparent"
+	}
 };
 
 export default styles;
