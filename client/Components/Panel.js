@@ -4,21 +4,32 @@ import styles from "../Styles/styles";
 import { ArrowSvg, InsideText } from "../Helpers/";
 
 class Panel extends PureComponent {
+	state = { upArrow: this.props.buy > this.props.sell };
+
+	componentDidUpdate(prevProps) {
+		if (prevProps.buy < this.props.buy) {
+			this.setState({ upArrow: true });
+		}
+
+		if (prevProps.buy > this.props.buy) {
+			this.setState({ upArrow: false });
+		}
+	}
+
 	render() {
 		const { currencyPair, buy, sell } = this.props;
+		const { upArrow } = this.state;
 
 		const buyStringValue = buy.toString().padEnd(7, 0);
 		const sellStringValue = sell.toString().padEnd(7, 0);
 		const buyCurr = currencyPair.substring(0, 3);
 		const sellCurr = currencyPair.substring(4, 7);
-		const buyOverSell = buy > sell;
 
 		const CurrencyHeader = props => (
 			<div {...props} style={styles.pairHeader}>
 				{currencyPair}
 			</div>
 		);
-
 
 		return (
 			<div style={styles.wrapper}>
@@ -36,8 +47,8 @@ class Panel extends PureComponent {
 						<div
 							style={{
 								...styles.triangle,
-								borderBottomColor: buyOverSell ? "green" : "red",
-								transform: !buyOverSell ? "rotate(180deg)" : null
+								borderBottomColor: upArrow ? "green" : "red",
+								transform: !upArrow ? "rotate(180deg)" : null
 							}}
 						/>
 						<div style={{ ...styles.panel, ...styles.buyPanel }}>
