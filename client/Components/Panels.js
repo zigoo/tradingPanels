@@ -13,10 +13,10 @@ class Panels extends Component {
 			{ pair: "EUR JPY", buy: 120.589, sell: 120.491 }
 		]
 	};
+	
 	componentDidMount() {
 		const interval = setInterval(this.changePrices, 1200);
 		this.setState({ interval });
-		this.changePrices();
 	}
 
 	componentWillUnmount() {
