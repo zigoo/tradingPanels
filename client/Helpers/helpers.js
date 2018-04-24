@@ -11,8 +11,7 @@ const ArrowSvg = ({ children, right }) => {
 					right
 						? "M100 0 L76 0  24 0 L 10 14 C 10 14 8 21 11 26 L 24 36 L 100 36 Z"
 						: "M0 0 L76 0 L90 14 C90 14 92 21 89 26 L76 36 L0 36 Z"
-				}
-			/>
+				}/>
 			{children}
 		</svg>
 	);
@@ -20,7 +19,6 @@ const ArrowSvg = ({ children, right }) => {
 
 const InsideText = props => {
 	const { children, right, top, buy, sell } = props;
-	let child = typeof children === Array ? children.map(e => e) : children;
 
 	const SText = props => {
 		const { y, fsize, offset, fbold, ...rest } = props;
@@ -30,9 +28,11 @@ const InsideText = props => {
 			<text
 				{...rest}
 				x={
-					right && top ? "60px" :
-					right && buy ? `${offSetValue}px` : 
-					`${offset}px`
+					right && top
+						? "60px"
+						: right && buy
+							? `${offSetValue}px`
+							: `${offset}px`
 				}
 				y={y}
 				fill={sell ? "red" : "green"}
@@ -44,40 +44,31 @@ const InsideText = props => {
 		);
 	};
 
-	const wrappedText = simpleChild => {
+	const styledText = string => {
 		if (top) {
 			return (
 				<SText y="10" offset="2">
-					{simpleChild}
+					{string}
 				</SText>
 			);
 		}
 
 		return (
 			<React.Fragment>
-				<SText 
-					y="30"
-					offset="2"
-					fsize="12px">
-						{child.substring(0, 4)}
+				<SText y="30" offset="2" fsize="12px">
+					{string.substring(0, 4)}
 				</SText>
-				<SText
-					y="30"
-					offset="25"
-					fsize="16px"
-					fbold>
-						{child.substring(4, 6)}
+				<SText y="30" offset="25" fsize="16px" fbold>
+					{string.substring(4, 6)}
 				</SText>
-				<SText
-					y="25"
-					offset="45">
-						{child.substring(6, 7)}
+				<SText y="25" offset="45">
+					{string.substring(6, 7)}
 				</SText>
 			</React.Fragment>
 		);
 	};
 
-	return wrappedText(child);
+	return styledText(children);
 };
 
 export { ArrowSvg, InsideText };
