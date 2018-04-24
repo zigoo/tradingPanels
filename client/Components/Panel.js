@@ -14,9 +14,7 @@ class Panel extends PureComponent {
 		const sellCurr = currencyPair.substring(4, 7);
 
 		const CurrencyHeader = props => (
-			<div
-				{...props}
-				style={styles.pairHeader}>
+			<div {...props} style={styles.pairHeader}>
 					{currencyPair}
 			</div>)
 		
