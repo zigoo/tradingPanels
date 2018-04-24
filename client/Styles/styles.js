@@ -7,6 +7,10 @@ const styles = {
 		border: "1px #ccc solid",
 		padding: 4
 	},
+	innerBorder: {
+		height: "100%",
+		border: "1px #ccc solid"
+	},
 	pairHeader: {
 		height: "20px",
 		lineHeight: "20px",
